@@ -1,5 +1,5 @@
 import React from "react";
-import MarkdownEditor from "./components/markedown";
+import MarkdownEditor from "./markedown";
 import "./App.css";
 
 function App() {
