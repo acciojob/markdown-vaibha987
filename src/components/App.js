@@ -1,12 +1,21 @@
-import React from "react";
-import MarkdownEditor from "./markedown";
+import React, { useState } from 'react'
+import ReactMarkdown from 'react-markdown'
 
-function App() {
-  return (
-    <div className="app">
-      <MarkdownEditor />
-    </div>
-  );
+const App = () => {
+
+    const [markdown, setMarkdown] = useState("")
+    const [loading, setLoading] = useState(true)
+
+    const handleChange = (e) => {
+        setMarkdown(e.target.value)
+    }
+
+    return (
+        <div className='app'>
+            <textarea className="textarea" onChange={handleChange}></textarea>
+            <ReactMarkdown className="preview" children={markdown} />
+        </div>
+    )
 }
 
-export default App;
+export default App
